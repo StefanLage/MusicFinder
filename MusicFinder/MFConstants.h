@@ -23,3 +23,6 @@ FOUNDATION_EXPORT NSString * const HttpGet;
 FOUNDATION_EXPORT NSString * const ParamMediaKey;
 FOUNDATION_EXPORT NSString * const ParamMediaValue;
 FOUNDATION_EXPORT NSString * const ParamTermKey;
+
+// JSON KEYS
+FOUNDATION_EXPORT NSString * const SearchEndpoint_ResultNestedKey;

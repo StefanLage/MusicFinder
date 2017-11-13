@@ -22,3 +22,6 @@ NSString * const HttpGet = @"GET";
 NSString * const ParamMediaKey = @"media";
 NSString * const ParamMediaValue = @"music";
 NSString * const ParamTermKey = @"term";
+
+// JSON KEYS
+NSString * const SearchEndpoint_ResultNestedKey = @"results";

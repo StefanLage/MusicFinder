@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 
 @interface MFApiClient : NSObject
 
-- (void)searchFor:(nonnull NSString *)terms completion:(nonnull void (^)(id _Nullable response))handler;
+- (void)searchFor:(nonnull NSString *)terms completion:(nonnull void (^)(RACSignal * _Nullable response))handler;
 
 @end

@@ -17,6 +17,8 @@
 		F865A4571FB8DF4D00B1FF62 /* MFApiClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A4561FB8DF4D00B1FF62 /* MFApiClientTests.m */; };
 		F865A45A1FB8E36500B1FF62 /* MFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A4591FB8E36500B1FF62 /* MFConstants.m */; };
 		F865A4621FB9054B00B1FF62 /* MFStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A4611FB9054B00B1FF62 /* MFStringFormatter.m */; };
+		F8B4E1751FB918AB0066395D /* MFSong.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E1741FB918AB0066395D /* MFSong.m */; };
+		F8B4E1791FB920970066395D /* JSONModel+FromArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E1781FB920970066395D /* JSONModel+FromArray.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		F865A4591FB8E36500B1FF62 /* MFConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFConstants.m; sourceTree = "<group>"; };
 		F865A4601FB9054B00B1FF62 /* MFStringFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFStringFormatter.h; sourceTree = "<group>"; };
 		F865A4611FB9054B00B1FF62 /* MFStringFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFStringFormatter.m; sourceTree = "<group>"; };
+		F8B4E1731FB918AB0066395D /* MFSong.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFSong.h; sourceTree = "<group>"; };
+		F8B4E1741FB918AB0066395D /* MFSong.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSong.m; sourceTree = "<group>"; };
+		F8B4E1771FB920970066395D /* JSONModel+FromArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "JSONModel+FromArray.h"; path = "MusicFinder/Categories/JSONModel+FromArray.h"; sourceTree = SOURCE_ROOT; };
+		F8B4E1781FB920970066395D /* JSONModel+FromArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "JSONModel+FromArray.m"; path = "MusicFinder/Categories/JSONModel+FromArray.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,8 @@
 		F865A42B1FB8CA9A00B1FF62 /* MusicFinder */ = {
 			isa = PBXGroup;
 			children = (
+				F8B4E1761FB91EF60066395D /* Categories */,
+				F8B4E1721FB9188C0066395D /* Model */,
 				F865A45F1FB904EC00B1FF62 /* Utilities */,
 				F865A4521FB8DDA700B1FF62 /* Providers */,
 				F865A42C1FB8CA9B00B1FF62 /* AppDelegate.h */,
@@ -172,6 +180,25 @@
 				F865A4611FB9054B00B1FF62 /* MFStringFormatter.m */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F8B4E1721FB9188C0066395D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8B4E1731FB918AB0066395D /* MFSong.h */,
+				F8B4E1741FB918AB0066395D /* MFSong.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8B4E1761FB91EF60066395D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F8B4E1771FB920970066395D /* JSONModel+FromArray.h */,
+				F8B4E1781FB920970066395D /* JSONModel+FromArray.m */,
+			);
+			name = Categories;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,8 +408,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F865A4621FB9054B00B1FF62 /* MFStringFormatter.m in Sources */,
+				F8B4E1791FB920970066395D /* JSONModel+FromArray.m in Sources */,
 				F865A45A1FB8E36500B1FF62 /* MFConstants.m in Sources */,
 				F865A4551FB8DF2E00B1FF62 /* MFApiClient.m in Sources */,
+				F8B4E1751FB918AB0066395D /* MFSong.m in Sources */,
 				F865A43C1FB8CA9B00B1FF62 /* main.m in Sources */,
 				F865A42E1FB8CA9B00B1FF62 /* AppDelegate.m in Sources */,
 			);

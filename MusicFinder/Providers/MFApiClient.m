@@ -9,8 +9,8 @@
 #import "MFApiClient.h"
 #import <AFNetworking/AFNetworking.h>
 #import "MFConstants.h"
-#import "NSURL+ApiFormat.h"
 #import "MFStringFormatter.h"
+#import "MFSong.h"
 
 #pragma mark - Network Service
 @protocol CNetworkingService
@@ -54,14 +54,17 @@
 
 #pragma mark - Public
 
-- (void)searchFor:(nonnull NSString *)terms completion:(nonnull void (^)(id _Nullable response))handler{
+- (void)searchFor:(nonnull NSString *)terms completion:(nonnull void (^)(RACSignal * _Nullable response))handler{
     NSDictionary *params = @{
                              ParamMediaKey: ParamMediaValue,
                              ParamTermKey: terms
                              };
     [self get:SearchEndpoint params:params completion:^(NSURLResponse * _Nullable response, id  _Nullable responseObject, NSError * _Nonnull error) {
         if (responseObject){
-            handler(responseObject);
+            NSError * jsonError;
+            NSArray <MFSong*> *songs = [MFSong arrayOfModelsFromDictionaries:responseObject[SearchEndpoint_ResultNestedKey]
+                                                                       error:&jsonError];
+            handler([RACSignal return:songs]);
         }
         else{
             // should hanlde error itself -> using log service or something

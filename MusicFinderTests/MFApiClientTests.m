@@ -28,8 +28,8 @@
 - (void)testGet {
     XCTestExpectation *exp = [self expectationWithDescription:@"testGet"];
     NSString *terms = @"taylor swift";
-    [self.apiClient searchFor:terms completion:^(id response) {
-        XCTAssertNotNil(response, "testGet - we should have a response");
+    [self.apiClient searchFor:terms completion:^(RACSignal * songs) {
+        XCTAssertNotNil(songs, "testGet - we should have a response");
         [exp fulfill];
     }];
 
