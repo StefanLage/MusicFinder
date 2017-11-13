@@ -18,7 +18,8 @@
 		F865A45A1FB8E36500B1FF62 /* MFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A4591FB8E36500B1FF62 /* MFConstants.m */; };
 		F865A4621FB9054B00B1FF62 /* MFStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A4611FB9054B00B1FF62 /* MFStringFormatter.m */; };
 		F8B4E1751FB918AB0066395D /* MFSong.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E1741FB918AB0066395D /* MFSong.m */; };
-		F8B4E1791FB920970066395D /* JSONModel+FromArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E1781FB920970066395D /* JSONModel+FromArray.m */; };
+		F8B4E17E1FB924CC0066395D /* MFSearchSongsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E17D1FB924CC0066395D /* MFSearchSongsViewModel.m */; };
+		F8B4E1811FB926540066395D /* MFSearchSongsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E1801FB926540066395D /* MFSearchSongsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +57,10 @@
 		F865A4611FB9054B00B1FF62 /* MFStringFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFStringFormatter.m; sourceTree = "<group>"; };
 		F8B4E1731FB918AB0066395D /* MFSong.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFSong.h; sourceTree = "<group>"; };
 		F8B4E1741FB918AB0066395D /* MFSong.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSong.m; sourceTree = "<group>"; };
-		F8B4E1771FB920970066395D /* JSONModel+FromArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "JSONModel+FromArray.h"; path = "MusicFinder/Categories/JSONModel+FromArray.h"; sourceTree = SOURCE_ROOT; };
-		F8B4E1781FB920970066395D /* JSONModel+FromArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "JSONModel+FromArray.m"; path = "MusicFinder/Categories/JSONModel+FromArray.m"; sourceTree = SOURCE_ROOT; };
+		F8B4E17C1FB924CC0066395D /* MFSearchSongsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFSearchSongsViewModel.h; sourceTree = "<group>"; };
+		F8B4E17D1FB924CC0066395D /* MFSearchSongsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSearchSongsViewModel.m; sourceTree = "<group>"; };
+		F8B4E17F1FB926540066395D /* MFSearchSongsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFSearchSongsController.h; sourceTree = "<group>"; };
+		F8B4E1801FB926540066395D /* MFSearchSongsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSearchSongsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,16 +126,17 @@
 		F865A42B1FB8CA9A00B1FF62 /* MusicFinder */ = {
 			isa = PBXGroup;
 			children = (
-				F8B4E1761FB91EF60066395D /* Categories */,
-				F8B4E1721FB9188C0066395D /* Model */,
-				F865A45F1FB904EC00B1FF62 /* Utilities */,
-				F865A4521FB8DDA700B1FF62 /* Providers */,
+				F8B4E17B1FB924A50066395D /* ViewModels */,
+				F8B4E17A1FB924A00066395D /* Views */,
 				F865A42C1FB8CA9B00B1FF62 /* AppDelegate.h */,
 				F865A42D1FB8CA9B00B1FF62 /* AppDelegate.m */,
-				F865A4511FB8CB8800B1FF62 /* Resources */,
-				F865A4501FB8CB8000B1FF62 /* Supporting Files */,
 				F865A4581FB8E36500B1FF62 /* MFConstants.h */,
 				F865A4591FB8E36500B1FF62 /* MFConstants.m */,
+				F8B4E1721FB9188C0066395D /* Model */,
+				F865A4521FB8DDA700B1FF62 /* Providers */,
+				F865A4511FB8CB8800B1FF62 /* Resources */,
+				F865A4501FB8CB8000B1FF62 /* Supporting Files */,
+				F865A45F1FB904EC00B1FF62 /* Utilities */,
 			);
 			path = MusicFinder;
 			sourceTree = "<group>";
@@ -191,14 +195,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F8B4E1761FB91EF60066395D /* Categories */ = {
+		F8B4E17A1FB924A00066395D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F8B4E1771FB920970066395D /* JSONModel+FromArray.h */,
-				F8B4E1781FB920970066395D /* JSONModel+FromArray.m */,
+				F8B4E17F1FB926540066395D /* MFSearchSongsController.h */,
+				F8B4E1801FB926540066395D /* MFSearchSongsController.m */,
 			);
-			name = Categories;
-			path = "New Group";
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F8B4E17B1FB924A50066395D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F8B4E17C1FB924CC0066395D /* MFSearchSongsViewModel.h */,
+				F8B4E17D1FB924CC0066395D /* MFSearchSongsViewModel.m */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,8 +420,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F865A4621FB9054B00B1FF62 /* MFStringFormatter.m in Sources */,
-				F8B4E1791FB920970066395D /* JSONModel+FromArray.m in Sources */,
+				F8B4E17E1FB924CC0066395D /* MFSearchSongsViewModel.m in Sources */,
 				F865A45A1FB8E36500B1FF62 /* MFConstants.m in Sources */,
+				F8B4E1811FB926540066395D /* MFSearchSongsController.m in Sources */,
 				F865A4551FB8DF2E00B1FF62 /* MFApiClient.m in Sources */,
 				F8B4E1751FB918AB0066395D /* MFSong.m in Sources */,
 				F865A43C1FB8CA9B00B1FF62 /* main.m in Sources */,
