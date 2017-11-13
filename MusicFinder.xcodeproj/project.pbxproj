@@ -13,7 +13,10 @@
 		F865A4361FB8CA9B00B1FF62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F865A4351FB8CA9B00B1FF62 /* Assets.xcassets */; };
 		F865A4391FB8CA9B00B1FF62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F865A4371FB8CA9B00B1FF62 /* LaunchScreen.storyboard */; };
 		F865A43C1FB8CA9B00B1FF62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A43B1FB8CA9B00B1FF62 /* main.m */; };
-		F865A4461FB8CA9B00B1FF62 /* MusicFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A4451FB8CA9B00B1FF62 /* MusicFinderTests.m */; };
+		F865A4551FB8DF2E00B1FF62 /* MFApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A4541FB8DF2E00B1FF62 /* MFApiClient.m */; };
+		F865A4571FB8DF4D00B1FF62 /* MFApiClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A4561FB8DF4D00B1FF62 /* MFApiClientTests.m */; };
+		F865A45A1FB8E36500B1FF62 /* MFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A4591FB8E36500B1FF62 /* MFConstants.m */; };
+		F865A4621FB9054B00B1FF62 /* MFStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A4611FB9054B00B1FF62 /* MFStringFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +44,14 @@
 		F865A43A1FB8CA9B00B1FF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F865A43B1FB8CA9B00B1FF62 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F865A4411FB8CA9B00B1FF62 /* MusicFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F865A4451FB8CA9B00B1FF62 /* MusicFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicFinderTests.m; sourceTree = "<group>"; };
 		F865A4471FB8CA9B00B1FF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F865A4531FB8DF2E00B1FF62 /* MFApiClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFApiClient.h; sourceTree = "<group>"; };
+		F865A4541FB8DF2E00B1FF62 /* MFApiClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFApiClient.m; sourceTree = "<group>"; };
+		F865A4561FB8DF4D00B1FF62 /* MFApiClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFApiClientTests.m; sourceTree = "<group>"; };
+		F865A4581FB8E36500B1FF62 /* MFConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFConstants.h; sourceTree = "<group>"; };
+		F865A4591FB8E36500B1FF62 /* MFConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFConstants.m; sourceTree = "<group>"; };
+		F865A4601FB9054B00B1FF62 /* MFStringFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFStringFormatter.h; sourceTree = "<group>"; };
+		F865A4611FB9054B00B1FF62 /* MFStringFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFStringFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +117,14 @@
 		F865A42B1FB8CA9A00B1FF62 /* MusicFinder */ = {
 			isa = PBXGroup;
 			children = (
+				F865A45F1FB904EC00B1FF62 /* Utilities */,
+				F865A4521FB8DDA700B1FF62 /* Providers */,
 				F865A42C1FB8CA9B00B1FF62 /* AppDelegate.h */,
 				F865A42D1FB8CA9B00B1FF62 /* AppDelegate.m */,
 				F865A4511FB8CB8800B1FF62 /* Resources */,
 				F865A4501FB8CB8000B1FF62 /* Supporting Files */,
+				F865A4581FB8E36500B1FF62 /* MFConstants.h */,
+				F865A4591FB8E36500B1FF62 /* MFConstants.m */,
 			);
 			path = MusicFinder;
 			sourceTree = "<group>";
@@ -119,8 +132,8 @@
 		F865A4441FB8CA9B00B1FF62 /* MusicFinderTests */ = {
 			isa = PBXGroup;
 			children = (
-				F865A4451FB8CA9B00B1FF62 /* MusicFinderTests.m */,
 				F865A4471FB8CA9B00B1FF62 /* Info.plist */,
+				F865A4561FB8DF4D00B1FF62 /* MFApiClientTests.m */,
 			);
 			path = MusicFinderTests;
 			sourceTree = "<group>";
@@ -141,6 +154,24 @@
 				F865A4371FB8CA9B00B1FF62 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F865A4521FB8DDA700B1FF62 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				F865A4531FB8DF2E00B1FF62 /* MFApiClient.h */,
+				F865A4541FB8DF2E00B1FF62 /* MFApiClient.m */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		F865A45F1FB904EC00B1FF62 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F865A4601FB9054B00B1FF62 /* MFStringFormatter.h */,
+				F865A4611FB9054B00B1FF62 /* MFStringFormatter.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +380,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F865A4621FB9054B00B1FF62 /* MFStringFormatter.m in Sources */,
+				F865A45A1FB8E36500B1FF62 /* MFConstants.m in Sources */,
+				F865A4551FB8DF2E00B1FF62 /* MFApiClient.m in Sources */,
 				F865A43C1FB8CA9B00B1FF62 /* main.m in Sources */,
 				F865A42E1FB8CA9B00B1FF62 /* AppDelegate.m in Sources */,
 			);
@@ -358,7 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F865A4461FB8CA9B00B1FF62 /* MusicFinderTests.m in Sources */,
+				F865A4571FB8DF4D00B1FF62 /* MFApiClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XG2NZNAV2;
-				INFOPLIST_FILE = MusicFinder/Info.plist;
+				INFOPLIST_FILE = "MusicFinder/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stefanlage.MusicFinder;
@@ -511,7 +545,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XG2NZNAV2;
-				INFOPLIST_FILE = MusicFinder/Info.plist;
+				INFOPLIST_FILE = "MusicFinder/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stefanlage.MusicFinder;

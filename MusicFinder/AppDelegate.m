@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MFApiClient.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) UINavigationController *navigationController;
