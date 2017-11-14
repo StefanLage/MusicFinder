@@ -10,11 +10,6 @@
 
 @implementation MFSong
 
-+ (JSONKeyMapper *)keyMapper
-{
-    return [JSONKeyMapper mapperForTitleCase];
-}
-
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
     if ([propertyName isEqualToString:@"artistId"]

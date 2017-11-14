@@ -7,10 +7,15 @@
 //
 
 #import "MFSearchSongsController.h"
+#import "MFSearchSongsResultsController.h"
+#import <ReactiveObjC/ReactiveObjC.h>
+#import "UISearchBar+RAC.h"
 
-@interface MFSearchSongsController ()
+@interface MFSearchSongsController () <UITableViewDelegate>
 
 @property (nonatomic, strong, readonly) MFSearchSongsViewModel *viewModel;
+@property (nonatomic, strong, readonly) UISearchController *searchBarController;
+@property (nonatomic, strong, readonly) MFSearchSongsResultsController *resultController;
 
 @end
 
@@ -21,13 +26,17 @@
     self = [super init];
     if (self){
         _viewModel = viewModel;
+        _resultController = [[MFSearchSongsResultsController alloc] initWithViewModel:self.viewModel];
+        _searchBarController = [[UISearchController alloc] initWithSearchResultsController:self.resultController];
+        [self setTitle:self.viewModel.title];
+        [self setUpSearchBar];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,14 +44,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setUpSearchBar{
+    self.searchBarController.searchBar.placeholder = self.viewModel.searchBarPlaceHolder;
+    [self.searchBarController.searchBar sizeToFit];
+    self.resultController.tableView.delegate = self;
+    self.searchBarController.dimsBackgroundDuringPresentation = YES;
+    self.definesPresentationContext = YES;
+    // Add the searchBar in the navigation bar
+    if (@available(iOS 11.0, *)){
+        self.navigationItem.searchController = _searchBarController;
+    }
+    else{
+        self.navigationItem.titleView = _searchBarController.searchBar;
+    }
+    // bind searchTerms to the searchbar's input
+    RAC(self.viewModel, searchTerms) = self.searchBarController.searchBar.rac_textSignal;
+    // Avoid retain cylce
+    @weakify(self);
+    [[self.viewModel.songsObserver deliverOnMainThread]
+     subscribeNext:^(id _) {
+         @strongify(self);
+         // Send message to the tableView to update itself
+         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+         [self.resultController.tableView reloadSections:indexSet
+                                        withRowAnimation:UITableViewRowAnimationAutomatic];
+     }];
 }
-*/
+
+#pragma mark - UITableViewDelegate
 
 @end

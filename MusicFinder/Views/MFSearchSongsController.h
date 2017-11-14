@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MFSearchSongsViewModel.h"
 
-@interface MFSearchSongsController : UISearchController
+@interface MFSearchSongsController : UIViewController
 
 - (instancetype) initWithViewModel: (MFSearchSongsViewModel *) viewModel;
 

@@ -25,3 +25,7 @@ NSString * const ParamTermKey = @"term";
 
 // JSON KEYS
 NSString * const SearchEndpoint_ResultNestedKey = @"results";
+
+// SEARCHSONGS CONSTANTS
+NSString * const SearchSongs_Title = @"Songs";
+NSString * const SearchSongs_PlaceHolder = @"Enter an Artist, Album or track name";

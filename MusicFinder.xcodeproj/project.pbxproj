@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06488A085CEA149D9138BC69 /* libPods-MusicFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B430C21E3C98C92AC80A711 /* libPods-MusicFinder.a */; };
 		30B1AF5E5CBA62EEE5F2A3F9 /* libPods-MusicFinderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8557ADE17740B8A722CBA3A0 /* libPods-MusicFinderTests.a */; };
+		F85D30701FBA348F003F7E92 /* MFSearchSongsResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F85D306F1FBA348F003F7E92 /* MFSearchSongsResultsController.m */; };
 		F865A42E1FB8CA9B00B1FF62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F865A42D1FB8CA9B00B1FF62 /* AppDelegate.m */; };
 		F865A4361FB8CA9B00B1FF62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F865A4351FB8CA9B00B1FF62 /* Assets.xcassets */; };
 		F865A4391FB8CA9B00B1FF62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F865A4371FB8CA9B00B1FF62 /* LaunchScreen.storyboard */; };
@@ -20,6 +21,8 @@
 		F8B4E1751FB918AB0066395D /* MFSong.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E1741FB918AB0066395D /* MFSong.m */; };
 		F8B4E17E1FB924CC0066395D /* MFSearchSongsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E17D1FB924CC0066395D /* MFSearchSongsViewModel.m */; };
 		F8B4E1811FB926540066395D /* MFSearchSongsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E1801FB926540066395D /* MFSearchSongsController.m */; };
+		F8ECCE0E1FBA5A9D00E49A11 /* UISearchBar+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ECCE0D1FBA5A9D00E49A11 /* UISearchBar+RAC.m */; };
+		F8ECCE101FBA79DF00E49A11 /* MFSearchSongsViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ECCE0F1FBA79DF00E49A11 /* MFSearchSongsViewModelTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,8 @@
 		8557ADE17740B8A722CBA3A0 /* libPods-MusicFinderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MusicFinderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F43F0A685155CF9C909378 /* Pods-MusicFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicFinderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicFinderTests/Pods-MusicFinderTests.release.xcconfig"; sourceTree = "<group>"; };
 		D0FF53B4A82388C61EC370F4 /* Pods-MusicFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicFinder/Pods-MusicFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		F85D306E1FBA348F003F7E92 /* MFSearchSongsResultsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFSearchSongsResultsController.h; sourceTree = "<group>"; };
+		F85D306F1FBA348F003F7E92 /* MFSearchSongsResultsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSearchSongsResultsController.m; sourceTree = "<group>"; };
 		F865A4291FB8CA9A00B1FF62 /* MusicFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F865A42C1FB8CA9B00B1FF62 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F865A42D1FB8CA9B00B1FF62 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +66,9 @@
 		F8B4E17D1FB924CC0066395D /* MFSearchSongsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSearchSongsViewModel.m; sourceTree = "<group>"; };
 		F8B4E17F1FB926540066395D /* MFSearchSongsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFSearchSongsController.h; sourceTree = "<group>"; };
 		F8B4E1801FB926540066395D /* MFSearchSongsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSearchSongsController.m; sourceTree = "<group>"; };
+		F8ECCE0C1FBA5A9D00E49A11 /* UISearchBar+RAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+RAC.h"; sourceTree = "<group>"; };
+		F8ECCE0D1FBA5A9D00E49A11 /* UISearchBar+RAC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+RAC.m"; sourceTree = "<group>"; };
+		F8ECCE0F1FBA79DF00E49A11 /* MFSearchSongsViewModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSearchSongsViewModelTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +134,9 @@
 		F865A42B1FB8CA9A00B1FF62 /* MusicFinder */ = {
 			isa = PBXGroup;
 			children = (
-				F8B4E17B1FB924A50066395D /* ViewModels */,
-				F8B4E17A1FB924A00066395D /* Views */,
 				F865A42C1FB8CA9B00B1FF62 /* AppDelegate.h */,
 				F865A42D1FB8CA9B00B1FF62 /* AppDelegate.m */,
+				F8ECCE0B1FBA5A8500E49A11 /* Categories */,
 				F865A4581FB8E36500B1FF62 /* MFConstants.h */,
 				F865A4591FB8E36500B1FF62 /* MFConstants.m */,
 				F8B4E1721FB9188C0066395D /* Model */,
@@ -137,6 +144,8 @@
 				F865A4511FB8CB8800B1FF62 /* Resources */,
 				F865A4501FB8CB8000B1FF62 /* Supporting Files */,
 				F865A45F1FB904EC00B1FF62 /* Utilities */,
+				F8B4E17B1FB924A50066395D /* ViewModels */,
+				F8B4E17A1FB924A00066395D /* Views */,
 			);
 			path = MusicFinder;
 			sourceTree = "<group>";
@@ -146,6 +155,7 @@
 			children = (
 				F865A4471FB8CA9B00B1FF62 /* Info.plist */,
 				F865A4561FB8DF4D00B1FF62 /* MFApiClientTests.m */,
+				F8ECCE0F1FBA79DF00E49A11 /* MFSearchSongsViewModelTests.m */,
 			);
 			path = MusicFinderTests;
 			sourceTree = "<group>";
@@ -200,6 +210,8 @@
 			children = (
 				F8B4E17F1FB926540066395D /* MFSearchSongsController.h */,
 				F8B4E1801FB926540066395D /* MFSearchSongsController.m */,
+				F85D306E1FBA348F003F7E92 /* MFSearchSongsResultsController.h */,
+				F85D306F1FBA348F003F7E92 /* MFSearchSongsResultsController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +223,15 @@
 				F8B4E17D1FB924CC0066395D /* MFSearchSongsViewModel.m */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F8ECCE0B1FBA5A8500E49A11 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F8ECCE0C1FBA5A9D00E49A11 /* UISearchBar+RAC.h */,
+				F8ECCE0D1FBA5A9D00E49A11 /* UISearchBar+RAC.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,11 +440,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85D30701FBA348F003F7E92 /* MFSearchSongsResultsController.m in Sources */,
 				F865A4621FB9054B00B1FF62 /* MFStringFormatter.m in Sources */,
 				F8B4E17E1FB924CC0066395D /* MFSearchSongsViewModel.m in Sources */,
 				F865A45A1FB8E36500B1FF62 /* MFConstants.m in Sources */,
 				F8B4E1811FB926540066395D /* MFSearchSongsController.m in Sources */,
 				F865A4551FB8DF2E00B1FF62 /* MFApiClient.m in Sources */,
+				F8ECCE0E1FBA5A9D00E49A11 /* UISearchBar+RAC.m in Sources */,
 				F8B4E1751FB918AB0066395D /* MFSong.m in Sources */,
 				F865A43C1FB8CA9B00B1FF62 /* main.m in Sources */,
 				F865A42E1FB8CA9B00B1FF62 /* AppDelegate.m in Sources */,
@@ -434,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8ECCE101FBA79DF00E49A11 /* MFSearchSongsViewModelTests.m in Sources */,
 				F865A4571FB8DF4D00B1FF62 /* MFApiClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
