@@ -30,3 +30,5 @@ FOUNDATION_EXPORT NSString * const SearchEndpoint_ResultNestedKey;
 // VIEWS TITLE
 FOUNDATION_EXPORT NSString * const SearchSongs_Title;
 FOUNDATION_EXPORT NSString * const SearchSongs_PlaceHolder;
+FOUNDATION_EXPORT NSString * const SongDetails_Title;
+FOUNDATION_EXPORT NSString * const SongDetails_DefaultValue;

@@ -10,7 +10,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "MFViewModelServices.h"
 
-@class MFApiClient;
+@class MFApiClient, MFSong;
 
 @interface MFSearchSongsViewModel : NSObject
 
@@ -21,6 +21,7 @@
 @property (nonatomic, strong, readonly) NSString *title;
 @property (nonatomic, strong, readonly) NSString *searchBarPlaceHolder;
 @property (nonatomic, strong, readonly) NSString *searchTerms;
+@property (nonatomic, strong, readonly) NSIndexPath *selectedIndexSong;
 
 - (instancetype)initWithApiClient:(MFApiClient *)apiClient;
 - (instancetype)initWithServices:(id<MFViewModelServices>)services apiClient:(MFApiClient *)apiClient;

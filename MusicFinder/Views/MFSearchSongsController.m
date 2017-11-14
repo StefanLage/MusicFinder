@@ -10,6 +10,7 @@
 #import "MFSearchSongsResultsController.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "UISearchBar+RAC.h"
+#import "UITableView+RAC.h"
 
 @interface MFSearchSongsController () <UITableViewDelegate>
 
@@ -37,7 +38,6 @@
 - (void)setUpSearchBar{
     self.searchBarController.searchBar.placeholder = self.viewModel.searchBarPlaceHolder;
     [self.searchBarController.searchBar sizeToFit];
-    self.resultController.tableView.delegate = self;
     self.searchBarController.dimsBackgroundDuringPresentation = YES;
     self.definesPresentationContext = YES;
     // Add the searchBar in the navigation bar
@@ -47,8 +47,14 @@
     else{
         self.navigationItem.titleView = _searchBarController.searchBar;
     }
+    [self bindViewModel];
+}
+
+- (void) bindViewModel{
     // bind searchTerms to the searchbar's input
     RAC(self.viewModel, searchTerms) = self.searchBarController.searchBar.rac_textSignal;
+    RAC(self.viewModel, selectedIndexSong) = self.resultController.tableView.rac_selectSignal;
+
     // Avoid retain cylce
     @weakify(self);
     [[self.viewModel.songsObserver deliverOnMainThread]
@@ -73,6 +79,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITableViewDelegate
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+
+    [self.resultController.tableView deselectRowAtIndexPath:self.viewModel.selectedIndexSong
+                                                   animated:NO];
+}
 
 @end

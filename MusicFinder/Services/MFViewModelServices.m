@@ -7,6 +7,8 @@
 //
 
 #import "MFViewModelServices.h"
+#import "MFSongDetailsViewController.h"
+#import "MFSongDetailsViewModel.h"
 
 @interface MFViewModelServicesImpl()
 
@@ -30,6 +32,14 @@
 
 - (void) pushViewModel:(id)viewModel{
     id viewController;
+
+    if ([viewModel isKindOfClass:MFSongDetailsViewModel.class]) {
+        viewController = [[MFSongDetailsViewController alloc] initWithViewModel:viewModel];
+    }
+    else{
+        return;
+    }
+
     [self.navigationController pushViewController:viewController
                                          animated:YES];
 }

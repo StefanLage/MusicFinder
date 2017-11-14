@@ -29,3 +29,5 @@ NSString * const SearchEndpoint_ResultNestedKey = @"results";
 // SEARCHSONGS CONSTANTS
 NSString * const SearchSongs_Title = @"Songs";
 NSString * const SearchSongs_PlaceHolder = @"Enter an Artist, Album or track name";
+NSString * const SongDetails_Title = @"Details";
+NSString * const SongDetails_DefaultValue = @"Unknown";

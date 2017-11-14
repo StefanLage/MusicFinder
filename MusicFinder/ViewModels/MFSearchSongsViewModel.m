@@ -10,12 +10,14 @@
 #import "MFApiClient.h"
 #import "MFSong.h"
 #import "MFConstants.h"
+#import "MFSongDetailsViewModel.h"
 
 @interface MFSearchSongsViewModel()
 
 @property (nonatomic, strong, readonly) MFApiClient * apiClient;
 @property (nonatomic, weak) id<MFViewModelServices> services;
 @property (nonatomic, strong) NSArray<MFSong*> *songs;
+@property (nonatomic, strong, readwrite) NSIndexPath *selectedIndexSong;
 @property (nonatomic, strong, readwrite) NSString *searchTerms;
 
 @end
@@ -25,17 +27,9 @@
 #pragma mark - Lifecycle
 
 - (instancetype)initWithServices:(id<MFViewModelServices>)services apiClient:(MFApiClient *)apiClient{
-    self = [self initWithApiClient:apiClient];
+    self = [super init];
     if(self){
         _services = services;
-        [self initialize];
-    }
-    return self;
-}
-
-- (instancetype)initWithApiClient:(MFApiClient *)apiClient{
-    self = [super init];
-    if (self){
         _apiClient = apiClient;
         [self initialize];
     }
@@ -47,6 +41,14 @@
     _searchBarPlaceHolder = SearchSongs_PlaceHolder;
 
     _songsObserver = [RACObserve(self, songs) mapReplace:@(YES)];
+    [self observeSearchTerms];
+    [self observeSelectedSong];
+}
+
+/**
+ *  Observe the search terms property
+ */
+-(void) observeSearchTerms{
     // Observe the search terms property
     @weakify(self);
     [[[RACObserve(self, searchTerms)
@@ -73,6 +75,33 @@
          else{
              // Reset results
              RAC(self, songs) = [RACSignal return:nil];
+         }
+     }];
+}
+
+/**
+ *  Observe the selected song property
+ */
+- (void) observeSelectedSong{
+    // Observe the search terms property
+    @weakify(self);
+    [[RACObserve(self, selectedIndexSong)
+       map:^MFSong *(NSIndexPath *indexPath) {
+           @strongify(self);
+           if (indexPath){
+               return [self songAtIndexPath:indexPath];
+           }
+           return nil;
+       }]
+     subscribeNext:^(MFSong *  _Nullable selectedSong) {
+         @strongify(self);
+         if (selectedSong){
+             dispatch_async(dispatch_get_main_queue(), ^(void){
+             // song is not nil ? => show detail view
+             MFSongDetailsViewModel *songDetailsViewModel = [[MFSongDetailsViewModel alloc] initWithServices:self.services
+                                                                                                        song:selectedSong];
+             [self.services pushViewModel:songDetailsViewModel];
+             });
          }
      }];
 }

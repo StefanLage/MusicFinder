@@ -24,6 +24,10 @@
 		F8ECCE0E1FBA5A9D00E49A11 /* UISearchBar+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ECCE0D1FBA5A9D00E49A11 /* UISearchBar+RAC.m */; };
 		F8ECCE101FBA79DF00E49A11 /* MFSearchSongsViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ECCE0F1FBA79DF00E49A11 /* MFSearchSongsViewModelTests.m */; };
 		F8ECCE181FBAF3AB00E49A11 /* MFViewModelServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ECCE171FBAF3AB00E49A11 /* MFViewModelServices.m */; };
+		F8ECCE1B1FBAFA0C00E49A11 /* MFSongDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ECCE1A1FBAFA0C00E49A11 /* MFSongDetailsViewModel.m */; };
+		F8ECCE1E1FBAFD0200E49A11 /* UITableView+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ECCE1D1FBAFD0200E49A11 /* UITableView+RAC.m */; };
+		F8ECCE211FBB0C6900E49A11 /* MFSongDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8ECCE201FBB0C6900E49A11 /* MFSongDetailsViewController.m */; };
+		F8ECCE231FBB0D4200E49A11 /* MFSongDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ECCE221FBB0D4200E49A11 /* MFSongDetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,13 @@
 		F8ECCE0F1FBA79DF00E49A11 /* MFSearchSongsViewModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSearchSongsViewModelTests.m; sourceTree = "<group>"; };
 		F8ECCE161FBAF3AB00E49A11 /* MFViewModelServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFViewModelServices.h; sourceTree = "<group>"; };
 		F8ECCE171FBAF3AB00E49A11 /* MFViewModelServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFViewModelServices.m; sourceTree = "<group>"; };
+		F8ECCE191FBAFA0C00E49A11 /* MFSongDetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFSongDetailsViewModel.h; sourceTree = "<group>"; };
+		F8ECCE1A1FBAFA0C00E49A11 /* MFSongDetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSongDetailsViewModel.m; sourceTree = "<group>"; };
+		F8ECCE1C1FBAFD0200E49A11 /* UITableView+RAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+RAC.h"; sourceTree = "<group>"; };
+		F8ECCE1D1FBAFD0200E49A11 /* UITableView+RAC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RAC.m"; sourceTree = "<group>"; };
+		F8ECCE1F1FBB0C6900E49A11 /* MFSongDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFSongDetailsViewController.h; sourceTree = "<group>"; };
+		F8ECCE201FBB0C6900E49A11 /* MFSongDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSongDetailsViewController.m; sourceTree = "<group>"; };
+		F8ECCE221FBB0D4200E49A11 /* MFSongDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MFSongDetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +148,6 @@
 		F865A42B1FB8CA9A00B1FF62 /* MusicFinder */ = {
 			isa = PBXGroup;
 			children = (
-				F8ECCE111FBAEF6400E49A11 /* Services */,
 				F865A42C1FB8CA9B00B1FF62 /* AppDelegate.h */,
 				F865A42D1FB8CA9B00B1FF62 /* AppDelegate.m */,
 				F8ECCE0B1FBA5A8500E49A11 /* Categories */,
@@ -146,6 +156,7 @@
 				F8B4E1721FB9188C0066395D /* Model */,
 				F865A4521FB8DDA700B1FF62 /* Providers */,
 				F865A4511FB8CB8800B1FF62 /* Resources */,
+				F8ECCE111FBAEF6400E49A11 /* Services */,
 				F865A4501FB8CB8000B1FF62 /* Supporting Files */,
 				F865A45F1FB904EC00B1FF62 /* Utilities */,
 				F8B4E17B1FB924A50066395D /* ViewModels */,
@@ -216,6 +227,9 @@
 				F8B4E1801FB926540066395D /* MFSearchSongsController.m */,
 				F85D306E1FBA348F003F7E92 /* MFSearchSongsResultsController.h */,
 				F85D306F1FBA348F003F7E92 /* MFSearchSongsResultsController.m */,
+				F8ECCE1F1FBB0C6900E49A11 /* MFSongDetailsViewController.h */,
+				F8ECCE201FBB0C6900E49A11 /* MFSongDetailsViewController.m */,
+				F8ECCE221FBB0D4200E49A11 /* MFSongDetailsViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +239,8 @@
 			children = (
 				F8B4E17C1FB924CC0066395D /* MFSearchSongsViewModel.h */,
 				F8B4E17D1FB924CC0066395D /* MFSearchSongsViewModel.m */,
+				F8ECCE191FBAFA0C00E49A11 /* MFSongDetailsViewModel.h */,
+				F8ECCE1A1FBAFA0C00E49A11 /* MFSongDetailsViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -234,6 +250,8 @@
 			children = (
 				F8ECCE0C1FBA5A9D00E49A11 /* UISearchBar+RAC.h */,
 				F8ECCE0D1FBA5A9D00E49A11 /* UISearchBar+RAC.m */,
+				F8ECCE1C1FBAFD0200E49A11 /* UITableView+RAC.h */,
+				F8ECCE1D1FBAFD0200E49A11 /* UITableView+RAC.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -335,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8ECCE231FBB0D4200E49A11 /* MFSongDetailsViewController.xib in Resources */,
 				F865A4391FB8CA9B00B1FF62 /* LaunchScreen.storyboard in Resources */,
 				F865A4361FB8CA9B00B1FF62 /* Assets.xcassets in Resources */,
 			);
@@ -453,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8ECCE1E1FBAFD0200E49A11 /* UITableView+RAC.m in Sources */,
 				F85D30701FBA348F003F7E92 /* MFSearchSongsResultsController.m in Sources */,
 				F865A4621FB9054B00B1FF62 /* MFStringFormatter.m in Sources */,
 				F8B4E17E1FB924CC0066395D /* MFSearchSongsViewModel.m in Sources */,
@@ -460,6 +480,8 @@
 				F8B4E1811FB926540066395D /* MFSearchSongsController.m in Sources */,
 				F865A4551FB8DF2E00B1FF62 /* MFApiClient.m in Sources */,
 				F8ECCE0E1FBA5A9D00E49A11 /* UISearchBar+RAC.m in Sources */,
+				F8ECCE1B1FBAFA0C00E49A11 /* MFSongDetailsViewModel.m in Sources */,
+				F8ECCE211FBB0C6900E49A11 /* MFSongDetailsViewController.m in Sources */,
 				F8B4E1751FB918AB0066395D /* MFSong.m in Sources */,
 				F865A43C1FB8CA9B00B1FF62 /* main.m in Sources */,
 				F865A42E1FB8CA9B00B1FF62 /* AppDelegate.m in Sources */,
