@@ -14,6 +14,7 @@
 @interface MFSearchSongsViewModel()
 
 @property (nonatomic, strong, readonly) MFApiClient * apiClient;
+@property (nonatomic, weak) id<MFViewModelServices> services;
 @property (nonatomic, strong) NSArray<MFSong*> *songs;
 @property (nonatomic, strong, readwrite) NSString *searchTerms;
 
@@ -23,46 +24,60 @@
 
 #pragma mark - Lifecycle
 
+- (instancetype)initWithServices:(id<MFViewModelServices>)services apiClient:(MFApiClient *)apiClient{
+    self = [self initWithApiClient:apiClient];
+    if(self){
+        _services = services;
+        [self initialize];
+    }
+    return self;
+}
+
 - (instancetype)initWithApiClient:(MFApiClient *)apiClient{
     self = [super init];
     if (self){
         _apiClient = apiClient;
-        
-        _title = SearchSongs_Title;
-        _searchBarPlaceHolder = SearchSongs_PlaceHolder;
-        
-        _songsObserver = [RACObserve(self, songs) mapReplace:@(YES)];
-        // Observe the search terms property
-        @weakify(self);
-        [[[RACObserve(self, searchTerms)
-           map:^RACTuple *(NSString *text) {
-               // return a tuple informing about whether the term contains at least 3 chars
-               // and it contain the current term we are evalutating
-               return [RACTuple tupleWithObjects:@(text.length > 2), text, nil];
-           }] distinctUntilChanged]
-         subscribeNext:^(RACTuple *  _Nullable tuple) {
-             @strongify(self);
-             // send message to api service to provide a result for current terms
-             BOOL isTermsLongEnough = [[tuple first] intValue];
-             NSString * terms = [tuple second];
-             if (isTermsLongEnough){
-                 // Should use a queue to make sure we don't receive a current results before a previous research
-                 // The issue could happen in case of bad interet connection
-                 [self.apiClient searchFor:terms completion:^(RACSignal * songs) {
-                     dispatch_async(dispatch_get_main_queue(), ^(void){
-                         // Set the value in the main thread
-                         RAC(self, songs) = songs;
-                     });
-                 }];
-             }
-             else{
-                 // Reset results
-                 RAC(self, songs) = [RACSignal return:nil];
-             }
-         }];
+        [self initialize];
     }
     return self;
 }
+
+- (void)initialize{
+    _title = SearchSongs_Title;
+    _searchBarPlaceHolder = SearchSongs_PlaceHolder;
+
+    _songsObserver = [RACObserve(self, songs) mapReplace:@(YES)];
+    // Observe the search terms property
+    @weakify(self);
+    [[[RACObserve(self, searchTerms)
+       map:^RACTuple *(NSString *text) {
+           // return a tuple informing about whether the term contains at least 3 chars
+           // and it contain the current term we are evalutating
+           return [RACTuple tupleWithObjects:@(text.length > 2), text, nil];
+       }] distinctUntilChanged]
+     subscribeNext:^(RACTuple *  _Nullable tuple) {
+         @strongify(self);
+         // send message to api service to provide a result for current terms
+         BOOL isTermsLongEnough = [[tuple first] intValue];
+         NSString * terms = [tuple second];
+         if (isTermsLongEnough){
+             // Should use a queue to make sure we don't receive a current results before a previous research
+             // The issue could happen in case of bad interet connection
+             [self.apiClient searchFor:terms completion:^(RACSignal * songs) {
+                 dispatch_async(dispatch_get_main_queue(), ^(void){
+                     // Set the value in the main thread
+                     RAC(self, songs) = songs;
+                 });
+             }];
+         }
+         else{
+             // Reset results
+             RAC(self, songs) = [RACSignal return:nil];
+         }
+     }];
+}
+
+#pragma mark - Public
 
 - (NSUInteger)songsInSection:(NSInteger)section{
     return self.songs.count;

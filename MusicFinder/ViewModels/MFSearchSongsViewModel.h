@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "MFViewModelServices.h"
 
 @class MFApiClient;
 
@@ -22,6 +23,7 @@
 @property (nonatomic, strong, readonly) NSString *searchTerms;
 
 - (instancetype)initWithApiClient:(MFApiClient *)apiClient;
+- (instancetype)initWithServices:(id<MFViewModelServices>)services apiClient:(MFApiClient *)apiClient;
 
 /**
  * Return the number of songs

@@ -25,8 +25,10 @@
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:[UIViewController new]];
     }
     else{
+        MFViewModelServicesImpl *viewModelServices = [[MFViewModelServicesImpl alloc] initWithNavigationController:self.navigationController];
         // Create view model, injecting store
-        MFSearchSongsViewModel *searchSongsViewModel = [[MFSearchSongsViewModel alloc] initWithApiClient: [MFApiClient new]];
+        MFSearchSongsViewModel *searchSongsViewModel = [[MFSearchSongsViewModel alloc] initWithServices:viewModelServices
+                                                                                              apiClient:[MFApiClient new]];
         // Create view controller, injecting view model
         MFSearchSongsController *searchSongsViewController = [[MFSearchSongsController alloc] initWithViewModel:searchSongsViewModel];
         // Wrap it in navigation controller before setting it as root view

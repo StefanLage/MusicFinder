@@ -21,7 +21,7 @@
 
 @implementation MFSearchSongsController
 
-#pragma mark - Lifecycle
+
 - (instancetype) initWithViewModel: (MFSearchSongsViewModel *) viewModel{
     self = [super init];
     if (self){
@@ -33,17 +33,6 @@
     }
     return self;
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 - (void)setUpSearchBar{
     self.searchBarController.searchBar.placeholder = self.viewModel.searchBarPlaceHolder;
@@ -70,6 +59,18 @@
          [self.resultController.tableView reloadSections:indexSet
                                         withRowAnimation:UITableViewRowAnimationAutomatic];
      }];
+}
+
+#pragma mark - Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableViewDelegate
